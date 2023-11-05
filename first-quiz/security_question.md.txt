@@ -1,0 +1,44 @@
+Si yo fuera el jefe de ingeniería de una nueva y emocionante startup tecnológica que instala paneles solares a través de una aplicación, estaría realizando una auditoría de seguridad de la infraestructura de mi aplicación utilizando OWASP Top 10 para 2021 como guía sobre qué problemas de seguridad podrían ser un problema para mí.
+
+Mi infraestructura se implementa en contenedores de Kubernetes en Amazon Web Services. Tengo estos componentes:
+
+Una aplicación móvil para Android e iOS.
+Una interfaz web que el cliente puede utilizar en lugar de la aplicación móvil. Esto está escrito en Javascript con Next.js.
+Una base de datos MySQL que almacena información del cliente, incluidas contraseñas, direcciones particulares, números de teléfono, etc.
+También contiene información de los pedidos del cliente.
+Un backend de Python implementado en FastAPI. Esto se comunica con la base de datos y proporciona datos tanto a la interfaz web como a las aplicaciones móviles.
+Tengo 12 empleados de ingeniería de software que tienen acceso completo al sistema, 3 empleados de atención al cliente que pueden ver la información del cliente y realizar cambios en pedidos y cuentas, y un empleado de ventas.
+Utilizando OWASP Top 10, buscaría los siguientes problemas de seguridad:
+
+Inyección de código:
+
+Inyección SQL: La base de datos MySQL almacena información sensible del cliente, por lo que es importante protegerla contra la inyección SQL. Esto se puede hacer mediante el uso de consultas preparadas y la validación de los datos de entrada.
+Inyección de código en la aplicación móvil: La aplicación móvil es una posible vía de ataque para la inyección de código. Esto se puede hacer mediante el uso de vulnerabilidades en el código de la aplicación o mediante el uso de malware que se instala en el dispositivo del usuario.
+Inyección de código en la interfaz web: La interfaz web es otra posible vía de ataque para la inyección de código. Esto se puede hacer mediante el uso de vulnerabilidades en el código de la interfaz web o mediante el uso de ataques de phishing.
+Inseguridad de la autenticación y autorización:
+
+Autenticación débil: Los empleados de ingeniería de software, los empleados de atención al cliente y el empleado de ventas tienen acceso completo al sistema. Es importante implementar una autenticación fuerte para estos usuarios para evitar que los atacantes accedan al sistema sin autorización.
+Autorización insuficiente: Los empleados de atención al cliente pueden ver la información del cliente y realizar cambios en pedidos y cuentas. Es importante implementar una autorización adecuada para estos usuarios para evitar que accedan a información que no necesitan.
+Seguridad de la información:
+
+Almacenamiento de datos confidenciales: La base de datos MySQL almacena información sensible del cliente, como contraseñas, direcciones particulares y números de teléfono. Es importante cifrar esta información para evitar que los atacantes accedan a ella.
+Transferencia de datos confidenciales: La aplicación móvil y la interfaz web transfieren información del cliente entre el cliente y el servidor. Es importante utilizar cifrado para proteger esta información durante la transferencia.
+Exposición de datos sensibles:
+
+Exposición de información de configuración: La aplicación móvil y la interfaz web pueden exponer información de configuración, como las claves API. Es importante proteger esta información para evitar que los atacantes la utilicen para comprometer el sistema.
+Exposición de datos de usuario: La base de datos MySQL almacena información del cliente, como contraseñas, direcciones particulares y números de teléfono. Es importante proteger esta información para evitar que los atacantes la accedan o la divulguen.
+Interrupción del servicio:
+
+Denial of Service (DoS): Los atacantes pueden intentar sobrecargar el sistema con solicitudes para interrumpir el servicio. Es importante implementar medidas de mitigación de DoS para evitar que esto suceda.
+Incidentes de seguridad: Los incidentes de seguridad, como los ataques de ransomware, pueden interrumpir el servicio. Es importante tener un plan de respuesta a incidentes para poder recuperarse de estos incidentes de manera rápida y eficiente.
+Otros problemas de seguridad:
+
+Evaluación de la seguridad: Es importante realizar evaluaciones de la seguridad de manera regular para identificar y corregir los problemas de seguridad.
+Concienciación de la seguridad: Es importante capacitar a los empleados sobre las mejores prácticas de seguridad para evitar que cometan errores que puedan comprometer el sistema.
+Basándome en mi análisis de OWASP Top 10, implementaría las siguientes medidas de seguridad para proteger mi sistema:
+
+Inyección de código:
+Utilizar consultas preparadas en la base de datos MySQL.
+Validar los datos de entrada en la aplicación móvil y la interfaz web.
+Inseguridad de la autenticación y autorización:
+Implementar autenticación multifactor
